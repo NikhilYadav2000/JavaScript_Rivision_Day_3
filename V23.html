@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<script>
+    // difference betweem innerText and textContent is if u do display:0 inside any tag then innerText will only show the visible data, but textContent will show full data.
+    // innerHTML gives, if any tag is written inside it it shows that also
+    // document.querySelector("input[type="password"]")
+    document.querySelector("ul").querySelector("li").style.backgroundColor="red";
+    /*
+    document.querySelectorAll('li')
+NodeList(3) [li, li, li]
+// This is not an array 
+undefined
+const list =document.querySelectorAll('li')
+undefined
+list.style.coloe="green";
+VM1304:1 Uncaught TypeError: Cannot set properties of undefined (setting 'coloe')
+    at <anonymous>:1:17
+(anonymous) @ VM1304:1Understand this error
+// This cant happen bcoz its a node list not an array
+undefined
+list.style.color="green";
+VM1420:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:17
+(anonymous) @ VM1420:1Understand this error
+list.style.color[0]="green";
+VM1433:1 Uncaught TypeError: Cannot read properties of undefined (reading 'color')
+    at <anonymous>:1:12
+(anonymous) @ VM1433:1Understand this error
+list[0].style.color="green";
+'green'
+// This turns li[0] into green color
+undefined
+list
+NodeList(3) [li, li, li]0: li1: li2: lilength: 3[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+it has forEach function inside it
+VM1644:1 Uncaught SyntaxError: Unexpected identifier 'has'Understand this error
+list.forEach((num)=>{
+    num.style.color="green"
+})
+undefined
+list.forEach((num)=>{
+    num.style.backgrounColor="cyan"
+})
+undefined
+list.forEach((num)=>{
+    num.style.backgroundColor="cyan"
+})
+*/
+
+/*
+HTMLCollection(3) [li.abc, li.abc, li.abc]0: li.abc1: li.abc2: li.abclength: 3[[Prototype]]: HTMLCollectionitem: ƒ item()length: (...)namedItem: ƒ namedItem()constructor: ƒ HTMLCollection()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "HTMLCollection"get length: ƒ length()[[Prototype]]: Object
+// we cant use for Each as it is not given here
+undefined
+// converting this list into an array
+undefined
+const list document.getElementsByClassName("abc")
+VM2103:1 Uncaught SyntaxError: Missing initializer in const declarationUnderstand this error
+const list = document.getElementsByClassName("abc")
+undefined
+Array.from(list)
+(3) [li.abc, li.abc, li.abc]
+const myArr=Array.from(list)
+undefined
+myArr.forEach((li)=>{
+    li.style.color="orange"
+})   
+*/
+</script>
+<body>
+    <div class="bg-black">
+        <h1 id="title" class="heading">DOM Learning</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, natus?</p>
+        <!-- <input type="password" name="" id=""> -->
+        <ul>
+            <li class="abc">a</li>
+            <li class="abc">b</li>
+            <li class="abc">c</li>
+        </ul>
+    </div>
+</body>
+</html>
