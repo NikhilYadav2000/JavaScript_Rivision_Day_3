@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="button" id="yellow" style="height: 100px;width: 100px;; background-color: yellow;">
+    </div>
+    <div class="button" id="red" style="height: 100px;width: 100px;; background-color: red;">
+    </div>
+    <script>
+        const buttons=document.querySelectorAll('.button');
+        // we have to change the bgc of the body so that is why we are choosing
+        const body=document.querySelector('body')
+
+        buttons.forEach((button)=>{
+            console.log(buttons); // gives u info about the two button 
+            button.addEventListener('click',(e)=>{
+                console.log(e); // gives pointerEvent or mouse event on click
+                console.log((e.target)); // gives the same info as log(buttons), the button tht we clicked
+                if(e.target.id==="yellow"){
+                    // body.style.backgroundColor="wheat";
+                    body.style.backgroundColor=e.target.id;
+                }
+                if(e.target.id==="red"){
+                    // body.style.backgroundColor="cyan";
+                    body.style.backgroundColor=e.target.id;
+                }
+            })
+        })
+    </script>
+</body>
+</html>
