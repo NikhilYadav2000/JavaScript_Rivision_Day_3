@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="image">
+        <!-- <li><img src="https://images.pexels.com/photos/22873741/pexels-photo-22873741/free-photo-of-close-up-of-a-cup-of-coffee.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="height: 100px; width: 100px;" onclick="alert('hii')"></li> -->
+        <li><img src="https://images.pexels.com/photos/22873741/pexels-photo-22873741/free-photo-of-close-up-of-a-cup-of-coffee.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="height: 100px; width: 100px;" id="owl"></li>
+        <li><img src="https://images.pexels.com/photos/21287054/pexels-photo-21287054/free-photo-of-a-city-square-with-tables-and-chairs-and-umbrellas.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="height: 100px; width: 100px;"></li>
+        <li><img src="https://images.pexels.com/photos/22941109/pexels-photo-22941109/free-photo-of-woman-near-favartix-lighthouse-in-spain.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="height: 100px; width: 100px;"></li>
+        <li><img src="https://images.pexels.com/photos/23181135/pexels-photo-23181135/free-photo-of-a-man-and-woman-sitting-on-a-window-sill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="height: 100px; width: 100px;" id="Man"></li>
+        <li><a href="www.codewithharry.com" id="cwh">CWH</a></li>
+    </ul>
+    <script>
+        // document.getElementById("owl").onclick=()=>{
+        //    alert("hii dude") ;
+        // }
+
+        // document.getElementById('owl').addEventListener('click',()=>{
+        //     alert("Hey Jude");
+        // },false) // default is false still write it (eventPropagation)
+        // false - event bubbling  (Mostly used)
+        // true - event capturing
+
+        // document.getElementById('image').addEventListener('click',()=>{
+        //     console.log("image");
+        // },false)
+        // document.getElementById('owl').addEventListener('click',()=>{
+        //     console.log("owl");
+        // },false) // as a bubble goes down to up, as we click the owl, owl gets logged first then  the image.
+
+        
+        // document.getElementById('image').addEventListener('click',()=>{
+        //     console.log("image");
+        // },true)
+        // document.getElementById('owl').addEventListener('click',()=>{
+        //     console.log("owl");
+        // },true) // capturing, as we click the owl ,image gets logged first then owl
+        
+        // document.getElementById('image').addEventListener('click',(e)=>{
+        //     e.stopPropagation()
+        //     console.log("image");
+        // },false)
+        // document.getElementById('owl').addEventListener('click',(e)=>{
+        //     e.stopPropagation()
+        //     console.log("owl");
+        // },false) // To stop this just add stopPropagation: now only owl will get called
+
+        document.getElementById('cwh').addEventListener('click',(e)=>{
+            e.preventDefault();
+            e.stopPropagation();
+            console.log(e);
+        })
+
+
+            document.querySelector('#image').addEventListener('click',(e)=>{
+                console.log(e.target); // tells what we clicked
+                console.log(e.target.parentNode); // what is the parent node of img i.e. li
+                // e.target.parentNode.remove();
+                // e.target.remove(); // if u do this the dot in li will be left that's why we are deleting li itself
+
+                console.log(e.target.tagName); // images and 1 li will be clicked
+                if(e.target.tagName==='IMG'){
+                    let removeIt=e.target; // img
+                    let removeIt2=removeIt.parentNode // li
+                    let removeIt3= removeIt2.parentNode // ul
+                    removeIt3.removeChild(removeIt2); // removed li
+                }
+            })
+
+            // if u click the link then all the li's will be deleted as we are clicking on a list item <li> link</li> so the parent is ul, tht is why everything gets deleted
+
+
+    </script>
+</body>
+</html>
